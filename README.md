@@ -1,1 +1,1 @@
-COW is a toy esoteric language. See the [classic COW webpage](https://bigzaphod.github.io/COW/) for more info!
+i made it Mar because shadekin autism. it's the same thing apart from the changes in words
