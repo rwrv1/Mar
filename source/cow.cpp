@@ -5,6 +5,7 @@
 // 
 // License: Public Domain
 //--------------------------------------------
+// Edited by rwrv to be Mar
 #include <vector>
 #include <stdio.h>
 #include <cstdlib>
@@ -202,7 +203,7 @@ int main( int argc, char** argv )
 {
 	if( argc < 2 )
 	{
-		printf( "Usage: %s program.cow\n\n", argv[0] );
+		printf( "Usage: %s program.mar\n\n", argv[0] );
 		exit( 1 );
 	}
 
@@ -223,29 +224,29 @@ int main( int argc, char** argv )
         int found = 0;
         buf[2] = fgetc( f );
 
-        if( found = !strncmp( "moo", buf, 3 ) )
+        if( found = !strncmp( "mar", buf, 3 ) )
             program.push_back( 0 );
-        else if( found = !strncmp( "mOo", buf, 3 ) )
+        else if( found = !strncmp( "mAr", buf, 3 ) )
             program.push_back( 1 );
-        else if( found = !strncmp( "moO", buf, 3 ) )
+        else if( found = !strncmp( "maR", buf, 3 ) )
             program.push_back( 2 );
-        else if( found = !strncmp( "mOO", buf, 3 ) )
+        else if( found = !strncmp( "mAR", buf, 3 ) )
             program.push_back( 3 );
-        else if( found = !strncmp( "Moo", buf, 3 ) )
+        else if( found = !strncmp( "Mar", buf, 3 ) )
             program.push_back( 4 );
-        else if( found = !strncmp( "MOo", buf, 3 ) )
+        else if( found = !strncmp( "MAr", buf, 3 ) )
             program.push_back( 5 );
-        else if( found = !strncmp( "MoO", buf, 3 ) )
+        else if( found = !strncmp( "MaR", buf, 3 ) )
             program.push_back( 6 );
-        else if( found = !strncmp( "MOO", buf, 3 ) )
+        else if( found = !strncmp( "MAR", buf, 3 ) )
             program.push_back( 7 );
-        else if( found = !strncmp( "OOO", buf, 3 ) )
+        else if( found = !strncmp( "mrr", buf, 3 ) )
             program.push_back( 8 );
-        else if( found = !strncmp( "MMM", buf, 3 ) )
+        else if( found = !strncmp( "MRR", buf, 3 ) )
             program.push_back( 9 );
-        else if( found = !strncmp( "OOM", buf, 3 ) )
+        else if( found = !strncmp( "Mrr", buf, 3 ) )
             program.push_back( 10 );
-        else if( found = !strncmp( "oom", buf, 3 ) )
+        else if( found = !strncmp( "mrR", buf, 3 ) )
             program.push_back( 11 );
             
         if( found )
