@@ -13,8 +13,8 @@
 #define COMPILER	"g++"
 #define FLAGS		"-O3 -x c++"
 #define NAME_FLAG	"-o "
-#define OUTPUT_EXEC "cow.out"
-#define OUTPUT_CPP	"cow.out.cpp"
+#define OUTPUT_EXEC "mar.out"
+#define OUTPUT_CPP	"mar.out.cpp"
 
 
 //#define PRETTY(s)	fprintf( output, "\t\t\t// %s\n", s );
@@ -81,7 +81,7 @@ bool compile( int instruction, bool advance )
             moocount++;
             fprintf( output, "goto M%d;", num );
             fprintf( output, "m%d:", moocount );
-            PRETTY( "moo" );
+            PRETTY( "mar" );
         }
         break;
 
@@ -89,13 +89,13 @@ bool compile( int instruction, bool advance )
     // mOo
     case 1:
         fprintf( output, "if(p==m.begin()){rterr();}else{p--;}" );
-        PRETTY( "mOo" );
+        PRETTY( "mAr" );
         break;
 
     // moO
     case 2:
         fprintf( output, "p++; if(p==m.end()){m.push_back(0);p=m.end();p--;}" );
-        PRETTY( "moO" );
+        PRETTY( "maR" );
         break;
     
     // mOO    
@@ -117,25 +117,25 @@ bool compile( int instruction, bool advance )
         fprintf( output, "case 10:{" ); compile( 10, false ); fprintf( output, "}break;" );
         fprintf( output, "case 11:{" ); compile( 11, false ); fprintf( output, "}break;" );
         fprintf( output, "default:{goto x;}};" );
-        PRETTY( "mOO" );
+        PRETTY( "mAR" );
         break;
     
     // Moo
     case 4:
         fprintf( output, "if((*p)!=0){putchar(*p);}else{(*p)=getchar();while(getchar()!='\\n');}" );
-        PRETTY( "Moo" );
+        PRETTY( "Mar" );
         break;
     
     // MOo
     case 5:
         fprintf( output, "(*p)--;" );
-        PRETTY( "MOo" );
+        PRETTY( "MAr" );
         break;
     
     // MoO
     case 6:
         fprintf( output, "(*p)++;" );
-        PRETTY( "MoO" );
+        PRETTY( "MaR" );
         break;
 
     // MOO
@@ -187,26 +187,26 @@ bool compile( int instruction, bool advance )
             MOOcount++;
             fprintf( output, "M%d:", MOOcount );
             fprintf( output, "if(!(*p))goto m%d;", num );
-            PRETTY( "MOO" );
+            PRETTY( "MAR" );
         }
         break;
     
     // OOO
     case 8:
         fprintf( output, "(*p)=0;" );
-        PRETTY( "OOO" );
+        PRETTY( "mrr" );
         break;
 
     // MMM
     case 9:
         fprintf( output, "if(h){(*p)=r;}else{r=(*p);}h=!h;" );
-        PRETTY( "MMM" );
+        PRETTY( "MRR" );
         break;
 
     // OOM
     case 10:
         fprintf( output, "printf(\"%%d\\n\",*p);" );
-        PRETTY( "OOM" );
+        PRETTY( "Mrr" );
         break;
     
     // oom
@@ -214,7 +214,7 @@ bool compile( int instruction, bool advance )
         fprintf( output, "char b[100];int c=0;" );
         fprintf( output, "while(c<sizeof(b)-1){b[c]=getchar();c++;b[c]=0;if(b[c-1]=='\\n')break;}" );
         fprintf( output, "if(c==sizeof(b))while(getchar()!='\\n');(*p)=atoi(b);" );
-        PRETTY( "oom" );
+        PRETTY( "mrR" );
         break;
 
     // bad stuff
@@ -233,7 +233,7 @@ int main( int argc, char** argv )
 {
 	if( argc < 2 )
 	{
-		printf( "Usage: %s program.cow\n\n", argv[0] );
+		printf( "Usage: %s program.mar\n\n", argv[0] );
 		exit( 1 );
 	}
 
@@ -254,29 +254,29 @@ int main( int argc, char** argv )
         int found = 0;
         buf[2] = fgetc( f );
 
-        if( found = !strncmp( "moo", buf, 3 ) )
+        if( found = !strncmp( "mar", buf, 3 ) )
             program.push_back( 0 );
-        else if( found = !strncmp( "mOo", buf, 3 ) )
+        else if( found = !strncmp( "mAr", buf, 3 ) )
             program.push_back( 1 );
-        else if( found = !strncmp( "moO", buf, 3 ) )
+        else if( found = !strncmp( "maR", buf, 3 ) )
             program.push_back( 2 );
-        else if( found = !strncmp( "mOO", buf, 3 ) )
+        else if( found = !strncmp( "mAR", buf, 3 ) )
             program.push_back( 3 );
-        else if( found = !strncmp( "Moo", buf, 3 ) )
+        else if( found = !strncmp( "Mar", buf, 3 ) )
             program.push_back( 4 );
-        else if( found = !strncmp( "MOo", buf, 3 ) )
+        else if( found = !strncmp( "MAr", buf, 3 ) )
             program.push_back( 5 );
-        else if( found = !strncmp( "MoO", buf, 3 ) )
+        else if( found = !strncmp( "MaR", buf, 3 ) )
             program.push_back( 6 );
-        else if( found = !strncmp( "MOO", buf, 3 ) )
+        else if( found = !strncmp( "MAR", buf, 3 ) )
             program.push_back( 7 );
-        else if( found = !strncmp( "OOO", buf, 3 ) )
+        else if( found = !strncmp( "mrr", buf, 3 ) )
             program.push_back( 8 );
-        else if( found = !strncmp( "MMM", buf, 3 ) )
+        else if( found = !strncmp( "MRR", buf, 3 ) )
             program.push_back( 9 );
-        else if( found = !strncmp( "OOM", buf, 3 ) )
+        else if( found = !strncmp( "Mrr", buf, 3 ) )
             program.push_back( 10 );
-        else if( found = !strncmp( "oom", buf, 3 ) )
+        else if( found = !strncmp( "mrR", buf, 3 ) )
             program.push_back( 11 );
             
         if( found )
