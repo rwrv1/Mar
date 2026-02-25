@@ -301,7 +301,7 @@ int main( int argc, char** argv )
     mem_pos = memory.begin();
     */
     
-    output = fopen( "cow.out.cpp", "wb" );
+    output = fopen( "mar.out.cpp", "wb" );
     fprintf( output, "#include <stdio.h>\n" );
     fprintf( output, "#include <vector>\n" );
     fprintf( output, "typedef std::vector<int> t_;t_ m;t_::iterator p;\n" );
@@ -321,7 +321,7 @@ int main( int argc, char** argv )
     fprintf( output, "x:return(0);}\n" );        
     fclose( output );
 
-    printf( "C++ source code: cow.out.cpp\n" );
+    printf( "C++ source code: mar.out.cpp\n" );
 
     #ifdef COMPILER
         std::string path( (const char*)COMPILER );
@@ -336,7 +336,7 @@ int main( int argc, char** argv )
         if( system( path.c_str() ) )
             printf( "\n\nCould not compile.  Possible causes:  C++ compiler is not installed, not in path, or not named '%s' or there is a bug in this compiler.\n\n", COMPILER );
         else
-            printf( "Executable created: cow.out\n" );
+            printf( "Executable created: mar.out\n" );
     #endif
 
 	return 0;
