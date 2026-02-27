@@ -1,40 +1,40 @@
-MoO
-moO
-MoO
+MaR
+maR
+MaR
 
-mOo
+mAr
 
-MOO
+MAR
 	// print first.
-	OOM
+	Mrr
 
 	// temp copy of first number.
-	MMM
-	moO
-	moO
-	MMM
-	mOo
-	mOo
+	MRR
+	maR
+	maR
+	MRR
+	mAr
+	mAr
 
 	// store second number off in the first position now.
-	moO
-	MMM
-	mOo
-	MMM
+	maR
+	MRR
+	mAr
+	MRR
 
 	// move back to temp number.
-	moO
-	moO
+	maR
+	maR
 
 	// use temp to add to first and store in second.
-	MOO
-		MOo
-		mOo
-		MoO
-		moO
-	moo
+	MAR
+		MAr
+		mAr
+		MaR
+		maR
+	mar
 
-	mOo
-	mOo
-moo
+	mAr
+	mAr
+mar
 
